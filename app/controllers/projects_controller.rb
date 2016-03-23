@@ -3,7 +3,9 @@ class ProjectsController < ApplicationController
   
   def index
     @project = Project.new
-    @projects = Project.all
+    @projects_asoview = Project.where(pj_type: "asoview")
+    @projects_media = Project.where(pj_type: "media")
+    @projects_bizdev = Project.where(pj_type: "bizdev")
   end
   
   def create

@@ -1,8 +1,8 @@
 <%= render 'form' %>
 
-<div class="panel panel-default">
+<div class="panel panel-warning">
   <div class="panel-heading">
-    プロジェクト一覧
+    asoviewプロジェクト
   </div>
     
   <div class="panel-body">
@@ -14,7 +14,7 @@
         <th>編集</th>
         <th>削除</th>
       </tr>
-    <% @projects.each do |project| %>
+    <% @projects_asoview.each do |project| %>
       <tr>
         <th><%= project.pj_type %></th>
         <th><%= project.pj_name %></th>
@@ -23,7 +23,61 @@
         <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
       <br>
     <% end %>
-    
-    </table>
+  </table>
   </div>
+</div>
+
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    メディアプロジェクト
+  </div>
+  
+  <div class="panel-body">
+  <table class="table table-striped">
+    <tr>
+      <th>プロジェクトタイプ</th>
+      <th>プロジェクト名</th>
+      <th>プロジェクト内容</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  <% @projects_media.each do |project| %>
+    <tr>
+      <th><%= project.pj_type %></th>
+      <th><%= project.pj_name %></th>
+      <th><%= project.pj_detail %></th>
+      <th><%= link_to 'edit' , edit_project_path(project) %></th>
+      <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
+    <br>
+  <% end %>
+  </table>
+  </div>
+</div>
+  
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    ビジネスソリューションプロジェクト
+  </div>
+    
+    <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>プロジェクトタイプ</th>
+        <th>プロジェクト名</th>
+        <th>プロジェクト内容</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    <% @projects_bizdev.each do |project| %>
+      <tr>
+        <th><%= project.pj_type %></th>
+        <th><%= project.pj_name %></th>
+        <th><%= project.pj_detail %></th>
+        <th><%= link_to 'edit' , edit_project_path(project) %></th>
+        <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
+      <br>
+    <% end %>
+    </table>
+    </div>
 </div>
