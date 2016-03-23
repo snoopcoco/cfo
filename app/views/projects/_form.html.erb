@@ -14,7 +14,7 @@
   
 <%# プロジェクト登録内容　%>
   <%= f.label :pj_type, "プロジェクトタイプ：" %>
-  <%= f.text_field :pj_type %>
+  <%= f.select :pj_type, ["asoview", "bizdev", "media"] %>
   
   <%= f.label :pj_name, "プロジェクト名：" %>
   <%= f.text_field :pj_name %>

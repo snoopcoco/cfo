@@ -16,7 +16,7 @@
       </tr>
     <% @projects.each do |project| %>
       <tr>
-        <th><%= project.pj_type [:asoview, :pj_type ] %></th>
+        <th><%= project.pj_type %></th>
         <th><%= project.pj_name %></th>
         <th><%= project.pj_detail %></th>
         <th><%= link_to 'edit' , edit_project_path(project) %></th>
