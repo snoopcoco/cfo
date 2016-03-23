@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'projects#index'
-  get 'signup', to: 'users#new'
 
   resources :projects
   resources :users

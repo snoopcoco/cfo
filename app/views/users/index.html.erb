@@ -1,25 +1,26 @@
-<h1>ユーザー登録</h1>
-<%= form_for(@user) do |f| %>
-<%= render 'shared/error_messages', object: f.object %>
-<%# ユーザー登録内容　%>
+<%= render 'form' %>
 
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    ユーザー一覧
+  </div>
+    
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>ID</th>
+        <th>ユーザー名</th>
+        <th>メールアドレス</th>
+        <th>権限</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <th><%= user.id %></th>
+        <th><%= user.name %></th>
+        <th><%= user.email %></th>
     <% end %>
-<%# ユーザー登録内容 end　%>
-
-<% @users.each do |user| %>
-<%= user.name %>
-<% end %>
+  </table>
+  </div>
+</div>
