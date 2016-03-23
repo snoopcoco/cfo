@@ -1,16 +1,5 @@
 <%= form_for(@project) do |f| %>
-  <% if @project.errors.present? %>
-  <div class="alert alert-danger">
-    <%= alert %>
-    <ul>
-      <% @project.errors.full_messages.each do |full_message| %>
-      <li>
-        <%= full_message %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
+<%= render 'shared/error_messages', object: f.object %>
   
 <%# プロジェクト登録内容　%>
   <%= f.label :pj_type, "プロジェクトタイプ：" %>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'projects#index'
-  resources :projects , except: [:index, :new] 
-  resources :pjtypes , except: [:index, :new]
+  get 'signup', to: 'users#new'
 
+  resources :projects , except: [:index, :new] 
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
