@@ -20,6 +20,9 @@
         <th><%= user.id %></th>
         <th><%= user.name %></th>
         <th><%= user.email %></th>
+        <th>nul</th>
+        <th><%= link_to "edit" , edit_user_path(user) %></th>
+        <th><%= link_to "destroy" , user , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
     <% end %>
   </table>
   </div>
