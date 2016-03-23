@@ -1,0 +1,29 @@
+<%= render 'form' %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    プロジェクト一覧
+  </div>
+    
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>プロジェクトタイプ</th>
+        <th>プロジェクト名</th>
+        <th>プロジェクト内容</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    <% @projects.each do |project| %>
+      <tr>
+        <th><%= project.pj_type [:asoview, :pj_type ] %></th>
+        <th><%= project.pj_name %></th>
+        <th><%= project.pj_detail %></th>
+        <th><%= link_to 'edit' , edit_project_path(project) %></th>
+        <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
+      <br>
+    <% end %>
+    
+    </table>
+  </div>
+</div>

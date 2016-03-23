@@ -1,0 +1,27 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.present? %>
+  <div class="alert alert-danger">
+    <%= alert %>
+    <ul>
+      <% @project.errors.full_messages.each do |full_message| %>
+      <li>
+        <%= full_message %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+<%# プロジェクト登録内容　%>
+  <%= f.label :pj_type, "プロジェクトタイプ：" %>
+  <%= f.text_field :pj_type %>
+  
+  <%= f.label :pj_name, "プロジェクト名：" %>
+  <%= f.text_field :pj_name %>
+
+  <%= f.label :pj_detail, "プロジェクト名：" %>
+  <%= f.text_field :pj_detail %>
+  
+  <%= f.submit class: "btn btn-sm btn-primary" %>
+<% end %>
+<%# プロジェクト登録内容 end　%>
