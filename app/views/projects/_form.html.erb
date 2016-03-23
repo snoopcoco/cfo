@@ -11,6 +11,9 @@
   <%= f.label :pj_detail, "プロジェクト名：" %>
   <%= f.text_field :pj_detail %>
   
+  <%= f.field_for :tasks do |task| %>
+  <%= render 'task', locals: {task: task } %>
+  
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
 <%# プロジェクト登録内容 end　%>

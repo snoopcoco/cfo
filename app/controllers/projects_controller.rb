@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
   
   def index
     @project = Project.new
+    @project.task.build #1対多のため
     @projects_asoview = Project.where(pj_type: "asoview")
     @projects_media = Project.where(pj_type: "media")
     @projects_bizdev = Project.where(pj_type: "bizdev")
