@@ -1,0 +1,10 @@
+<h1><%= @project.pj_name %></h1>
+
+            <%= form_for [@project, @project.works.build] do |f| %>
+            <%= f.text_field :wkname %>
+            <%= f.submit %>
+            <% end %>
+
+    <% @project.works.each do |work| %>
+        <%= work.wkname %>
+        <% end %>

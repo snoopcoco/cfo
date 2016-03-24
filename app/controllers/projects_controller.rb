@@ -8,6 +8,10 @@ class ProjectsController < ApplicationController
     @projects_bizdev = Project.where(pj_type: "bizdev")
   end
   
+  def show
+    @project = Project.find(params[:id])
+  end
+  
   def create
     @project = Project.new(project_params)
     if @project.save
