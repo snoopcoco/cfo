@@ -24,7 +24,7 @@
         <th><%= work.wkdetail %></th>
         <%#<th><%= link_to 'edit' , {:controller => "works", :action => "edit", :project_id => @project, :id => 1 }%></th>
         <th><%= link_to 'edit' , edit_project_work_path(@project.id, work.id) %></th>
-       <%# <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
+        <th><%= link_to "destroy" , project_work_path(@project.id, work.id) , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
       <br>
     <% end %>
   </table>

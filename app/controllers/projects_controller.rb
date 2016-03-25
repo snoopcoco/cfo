@@ -10,8 +10,8 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
-    # @works = @project.works.order(created_at: :desc)
-    @works = Work.where(project_id:params[:project_id])
+    @works = @project.works.order(created_at: :desc)
+    # @works = Work.where(project_id:params[:project_id])
   end
   
   def create
