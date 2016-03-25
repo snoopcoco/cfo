@@ -1,10 +1,31 @@
-<h1><%= @project.pj_name %></h1>
+<%= render 'work' %>
 
-            <%= form_for [@project, @project.works.build] do |f| %>
-            <%= f.text_field :wkname %>
-            <%= f.submit %>
-            <% end %>
-
-    <% @project.works.each do |work| %>
-        <%= work.wkname %>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    ワーク一覧
+        <% if @project.works.any? %>
+       (<%= @project.works.count %>)
         <% end %>
+  </div>
+    
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>id</th>
+        <th>ワーク名</th>
+        <th>ワーク内容</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    <% @project.works.each do |work| %>
+      <tr>
+        <th><%= work.id %></th>
+        <th><%= work.wkname %></th>
+        <th><%= work.wkdetail %></th>
+       <%# <th><%= link_to 'edit' , edit_project_work_path(@project, work.id) %></th>
+       <%# <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
+      <br>
+    <% end %>
+  </table>
+  </div>
+</div>

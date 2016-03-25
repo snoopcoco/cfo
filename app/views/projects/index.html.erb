@@ -22,7 +22,7 @@
         <th><%= project.pj_detail %></th>
         <th><%= link_to 'edit' , edit_project_path(project) %></th>
         <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
-        <th><%= link_to "work" , project_path(project.id) %></th>
+        <th><%= link_to "work" , project_path(project.id) %>(<%= project.works.count %>)</th>
       <br>
     <% end %>
   </table>
@@ -51,7 +51,7 @@
       <th><%= project.pj_detail %></th>
       <th><%= link_to 'edit' , edit_project_path(project) %></th>
       <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
-      <th><%= link_to "work" , project_path(project.id) %></th>
+      <th><%= link_to "work" , project_path(project.id) %>(<%= project.works.count %>)</th>
     <br>
   <% end %>
   </table>
@@ -81,7 +81,7 @@
         <th><%= project.pj_detail %></th>
         <th><%= link_to 'edit' , edit_project_path(project) %></th>
         <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
-        <th><%= link_to "work" , project_path(project.id) %></th>
+        <th><%= link_to "work" , project_path(project.id) %>(<%= project.works.count %>)</th>
       <br>
     <% end %>
     </table>
