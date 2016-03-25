@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'statc_pages#new'
+  root 'projects#index'
   get 'login', to: 'sessions#new'
+  post   'login' , to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
 
