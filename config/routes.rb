@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'projects#index'
+  root 'statc_pages#new'
+  get 'login', to: 'sessions#new'
+  delete 'logout', to: 'sessions#destroy'
+
 
   resources :projects do
     resources :works, only: [:create, :edit, :update, :destroy]
