@@ -1,7 +1,9 @@
 class WorksController < ApplicationController
     
   def create
-    @project = Project.find(params[:project_id])
+    # @project = Project.find(params[:project_id])
+    @project = Project.where(id: params[:project_id])
+    @works = Work.Where(project_id:params[:project_id])
     @work = @project.works.create(work_params)
     redirect_to project_path(@project.id)
   end
@@ -15,7 +17,6 @@ class WorksController < ApplicationController
   end
   
   def edit
-      @work = Work.find(params[:work_id])
   end
   
   def destroy

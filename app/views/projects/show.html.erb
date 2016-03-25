@@ -17,12 +17,13 @@
         <th>編集</th>
         <th>削除</th>
       </tr>
-    <% @project.works.each do |work| %>
+    <% @works.each do |work| %>
       <tr>
         <th><%= work.id %></th>
         <th><%= work.wkname %></th>
         <th><%= work.wkdetail %></th>
-       <%# <th><%= link_to 'edit' , edit_project_work_path(@project, work.id) %></th>
+        <%#<th><%= link_to 'edit' , {:controller => "works", :action => "edit", :project_id => @project, :id => 1 }%></th>
+        <th><%= link_to 'edit' , edit_project_work_path(@project.id, work.id) %></th>
        <%# <th><%= link_to "destroy" , project , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></th>
       <br>
     <% end %>
