@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
 
   resources :projects do
-    resources :works, only: [:create, :edit, :update, :destroy]
+    resources :works, only: [:create, :edit, :update, :destroy] do
+      resources :assign, only: [:create, :edit, :update, :destroy]
+    end
   end
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
