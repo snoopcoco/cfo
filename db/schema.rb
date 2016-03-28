@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324075234) do
+ActiveRecord::Schema.define(version: 20160328021002) do
 
   create_table "add_project_id_to_tasks", force: :cascade do |t|
     t.integer  "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "assigns", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "work_id"
   end
 
   create_table "pj_types", force: :cascade do |t|
