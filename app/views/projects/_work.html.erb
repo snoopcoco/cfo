@@ -1,0 +1,14 @@
+<%= form_for [@project, @project.works.build] do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+
+<%# ワーク登録内容　%>
+  
+  <%= f.label :wkname, "ワーク名：" %>
+  <%= f.text_field :wkname %>
+
+  <%= f.label :wkdetail, "ワーク内容：" %>
+  <%= f.text_field :wkdetail %>
+  
+  <%= f.submit class: "btn btn-sm btn-primary" %>
+<% end %>
+<%# ワーク登録内容 end　%>
